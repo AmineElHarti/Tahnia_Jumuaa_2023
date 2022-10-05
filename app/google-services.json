@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "917591903249",
+    "project_id": "tahnia-jumuaa-2023",
+    "storage_bucket": "tahnia-jumuaa-2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917591903249:android:a49b613d7b35adcfd575b0",
+        "android_client_info": {
+          "package_name": "com.tahni2a_jomo3a_2023.tahni2ajomo3a2023"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917591903249-f3t6u24kcre9kpap7fb8engv1mlhd8c6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIP-5s8h2nYh7LkmYM_PEHRB8J3tkf00I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917591903249-f3t6u24kcre9kpap7fb8engv1mlhd8c6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
