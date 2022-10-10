@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">" تهنئة جمعة 2023"</string>
+    <string name="share">"نشر"</string>
+    <string name="save">"حفظ"</string>
+    <string name="photo_saved">"تم الحفظ بنجاح"</string>
+    <string name="ChooseLanguage">"تغيير اللغة : "</string>
+    <string name="network_connectivity_lost_please_check">الرجاء التحقق من اتصال الانترنت الخاص بك</string>
+    <string name="your_internet_connection_was_restored">تمت استعادة اتصالك بالإنترنت</string>
+</resources>

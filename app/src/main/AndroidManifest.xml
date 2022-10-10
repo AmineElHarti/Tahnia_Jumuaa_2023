@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -27,19 +28,23 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.tahni2a_jomo3a_2023.tahni2ajomo3a2023.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
-
         <meta-data
             android:name="android.support.FILE_PROVIDER_PATHS"
             android:resource="@xml/paths" />
     </provider>
-
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6115524059978888~8505099107"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
 </application>
 
 </manifest>

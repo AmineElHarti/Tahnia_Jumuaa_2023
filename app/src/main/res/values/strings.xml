@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Tahnia Jumuaa 2023</string>
+    <string name="app_name">Friday congratulations 2023</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="photo_saved">Photo saved successfully</string>
+    <string name="ChooseLanguage">"Change language: "</string>
+    <string name="network_connectivity_lost_please_check">Please Check Your Internet Connection</string>
+    <string name="your_internet_connection_was_restored">Your internet connection was restored</string>
 </resources>
