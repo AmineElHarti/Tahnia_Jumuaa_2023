@@ -7,11 +7,11 @@ plugins {
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 android {
-    namespace 'com.tahni2a_jomo3a_2023.tahni2ajomo3a2023'
+    namespace 'com.nukelaa.tahniajumuaa2023'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.tahni2a_jomo3a_2023.tahni2ajomo3a2023"
+        applicationId "com.nukelaa.tahniajumuaa2023"
         minSdk 23
         targetSdk 32
         versionCode 1
@@ -81,6 +81,4 @@ dependencies {
     // Add the dependency for the App Check library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-appcheck-playintegrity'
-    //AppCheck Debug mode
-    implementation 'com.google.firebase:firebase-appcheck-debug:16.0.2'
 }

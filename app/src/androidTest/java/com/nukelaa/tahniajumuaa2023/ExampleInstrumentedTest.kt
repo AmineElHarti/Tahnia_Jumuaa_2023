@@ -1,4 +1,4 @@
-package com.tahni2a_jomo3a_2023.tahni2ajomo3a2023
+package com.nukelaa.tahniajumuaa2023
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.tahni2a_jomo3a_2023.tahni2ajomo3a2023", appContext.packageName)
+        assertEquals("com.nukelaa.tahniajumuaa2023", appContext.packageName)
     }
 }

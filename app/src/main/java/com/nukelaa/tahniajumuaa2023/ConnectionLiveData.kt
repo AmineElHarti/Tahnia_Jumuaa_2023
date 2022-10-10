@@ -1,4 +1,4 @@
-package com.tahni2a_jomo3a_2023.tahni2ajomo3a2023
+package com.nukelaa.tahniajumuaa2023
 
 import android.app.Application
 import android.content.Context

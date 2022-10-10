@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.nukelaa.tahniajumuaa2023.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/network_connectivity_lost_please_check"
-        android:textColor="@color/dark_bleu"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:visibility="gone"
         app:drawableStartCompat="@drawable/no_wifi" />
@@ -50,7 +50,7 @@
         android:padding="10dp"
         android:gravity="center"
         android:text="@string/your_internet_connection_was_restored"
-        android:textColor="@color/dark_bleu"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:visibility="gone" />
 

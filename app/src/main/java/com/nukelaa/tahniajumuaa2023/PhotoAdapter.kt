@@ -1,4 +1,4 @@
-package com.tahni2a_jomo3a_2023.tahni2ajomo3a2023
+package com.nukelaa.tahniajumuaa2023
 
 import android.content.ContentValues
 import android.content.Context
@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.firebase.storage.FirebaseStorage
-import com.tahni2a_jomo3a_2023.tahni2ajomo3a2023.databinding.PhotosCardviewBinding
+import com.nukelaa.tahniajumuaa2023.databinding.PhotosCardviewBinding
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -104,7 +104,7 @@ class PhotoAdapter(var context: Context, private val urlList: List<String>) :
             outputStream.close()
             uri = FileProvider.getUriForFile(
                 context,
-                "com.tahni2a_jomo3a_2023.tahni2ajomo3a2023.fileProvider",
+                "com.nukelaa.tahniajumuaa2023.fileProvider",
                 file
             )
         } catch (e: Exception) {

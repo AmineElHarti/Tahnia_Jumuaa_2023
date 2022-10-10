@@ -1,4 +1,4 @@
-package com.tahni2a_jomo3a_2023.tahni2ajomo3a2023
+package com.nukelaa.tahniajumuaa2023
 
 import android.Manifest
 import android.content.Context
@@ -20,10 +20,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.*
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
-import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
 import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 import com.google.firebase.database.FirebaseDatabase
-import com.tahni2a_jomo3a_2023.tahni2ajomo3a2023.databinding.ActivityMainBinding
+import com.nukelaa.tahniajumuaa2023.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -91,10 +90,8 @@ class MainActivity : AppCompatActivity() {
         firebaseAppCheck.installAppCheckProviderFactory(
             PlayIntegrityAppCheckProviderFactory.getInstance()
         )
-        firebaseAppCheck.installAppCheckProviderFactory(
-            DebugAppCheckProviderFactory.getInstance()
-        )
     }
+
     override fun onPause() {
         super.onPause()
         firstInternetCheck = true

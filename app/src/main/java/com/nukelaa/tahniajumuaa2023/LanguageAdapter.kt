@@ -1,5 +1,4 @@
-package com.tahni2a_jomo3a_2023.tahni2ajomo3a2023
-
+package com.nukelaa.tahniajumuaa2023
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.tahni2a_jomo3a_2023.tahni2ajomo3a2023.LanguageList.Companion.changeLanguage
+import com.nukelaa.tahniajumuaa2023.LanguageList.Companion.changeLanguage
 
 class LanguageAdapter(context: Context, private val languageList: List<LanguageItem>) :
     ArrayAdapter<LanguageItem>(context, 0, languageList) {
