@@ -73,4 +73,14 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
     //Admob
     implementation 'com.google.android.gms:play-services-ads:21.2.0'
+    //DataStore
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:30.5.0')
+
+    // Add the dependency for the App Check library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-appcheck-playintegrity'
+    //AppCheck Debug mode
+    implementation 'com.google.firebase:firebase-appcheck-debug:16.0.2'
 }

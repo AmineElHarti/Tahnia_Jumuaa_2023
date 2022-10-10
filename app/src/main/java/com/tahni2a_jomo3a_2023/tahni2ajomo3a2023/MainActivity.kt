@@ -2,7 +2,9 @@ package com.tahni2a_jomo3a_2023.tahni2ajomo3a2023
 
 import android.Manifest
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Toast
@@ -15,7 +17,11 @@ import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.*
+import com.google.firebase.FirebaseApp
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 import com.google.firebase.database.FirebaseDatabase
 import com.tahni2a_jomo3a_2023.tahni2ajomo3a2023.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
@@ -23,7 +29,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-
+import java.util.*
 
 lateinit var permissionLauncher: ActivityResultLauncher<Array<String>>
 var isWriteExternalStorageGranted = false
@@ -39,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        readData()
         setContentView(binding.root)
         checkNetworkConnection()
         permissionLauncher =
@@ -51,36 +58,66 @@ class MainActivity : AppCompatActivity() {
                         ?: isReadExternalStorageGranted
             }
         requestPermission(this)
-//        MobileAds.initialize(this)
-//        mAdView = binding.adView
-//        val adRequest = AdRequest.Builder().build()
-//        mAdView.loadAd(adRequest)
-//        mAdView.adListener = object : AdListener() {
-//            override fun onAdLoaded() {
-//                mAdView.isVisible = true
-//                super.onAdLoaded()
-//            }
-//
-//            override fun onAdFailedToLoad(p0: LoadAdError) {
-//                Toast.makeText(this@MainActivity, p0.message, Toast.LENGTH_SHORT).show()
-//                //TODO("delete toast")
-//                super.onAdFailedToLoad(p0)
-//            }
-//
-//            override fun onAdClosed() {
-//                mAdView.isGone = true
-//                super.onAdClosed()
-//            }
-//        }
+        MobileAds.initialize(this)
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+        mAdView.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                mAdView.isVisible = true
+                super.onAdLoaded()
+            }
+
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                super.onAdFailedToLoad(p0)
+                mAdView.isGone = true
+            }
+
+            override fun onAdClosed() {
+                mAdView.isGone = true
+                super.onAdClosed()
+            }
+        }
         setupLanguageAdapter(this@MainActivity, languageList)
         val recyclerView = binding.rvPhotos
         listFiles(this@MainActivity, recyclerView)
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        FirebaseApp.initializeApp(/*context=*/this)
+        val firebaseAppCheck = FirebaseAppCheck.getInstance()
+        firebaseAppCheck.installAppCheckProviderFactory(
+            PlayIntegrityAppCheckProviderFactory.getInstance()
+        )
+        firebaseAppCheck.installAppCheckProviderFactory(
+            DebugAppCheckProviderFactory.getInstance()
+        )
+    }
     override fun onPause() {
         super.onPause()
         firstInternetCheck = true
+    }
+
+    fun saveData(keyString: String, value: String) {
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply {
+            putString(keyString, value)
+        }.apply()
+    }
+
+    private fun readData() {
+        val sharedPreferences: SharedPreferences =
+            getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val localAbr: String? = sharedPreferences.getString("SAVED_LOCAL", null)
+        if (localAbr != null) {
+            val locale = Locale(localAbr)
+            Locale.setDefault(locale)
+            val config: Configuration = baseContext.resources.configuration
+            config.setLocale(locale)
+        }
     }
 
     private fun checkNetworkConnection() {
